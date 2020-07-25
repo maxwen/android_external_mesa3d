@@ -115,7 +115,7 @@ static const struct drm_driver_descriptor driver_descriptors[] = {
         .create_screen = pipe_v3d_create_screen,
         .driconf_xml = &v3d_driconf_xml,
     },
-#if defined(GALLIUM_VC4)
+#ifndef USE_V3D_KMSRO
     {
         .driver_name = "vc4",
         .create_screen = pipe_vc4_create_screen,
