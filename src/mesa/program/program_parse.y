@@ -121,11 +121,11 @@ static struct asm_instruction *asm_instruction_copy_ctor(
    } while(0)
 %}
 
-%pure-parser
+%define api.pure
+%define parse.error verbose
 %locations
 %lex-param   { struct asm_parser_state *state }
 %parse-param { struct asm_parser_state *state }
-%error-verbose
 
 %union {
    struct asm_instruction *inst;
